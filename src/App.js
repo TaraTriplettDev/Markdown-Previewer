@@ -40,6 +40,9 @@ function App() {
   const [markdownText, setMarkdownText] = useState(defaultMarkdown);
   const clearMarkdownText = () => {
     setMarkdownText('');
+  };
+  const resetMarkdownText = () => {
+    setMarkdownText(defaultMarkdown);
   }
     return (
     <>
@@ -47,7 +50,10 @@ function App() {
         <h1 style={{ textAlign: "center" }}>Markdown Previewer</h1>
         <div className="boxes-container">
           <textarea name="editor" id="editor" value={markdownText} onChange={(e) => setMarkdownText(e.target.value)}></textarea>
-          <button onClick={clearMarkdownText}>Clear Input Field</button>
+          <div className="buttons-container">
+          <button onClick={clearMarkdownText}>Clear</button>
+          <button onClick={resetMarkdownText}>Reset</button>
+          </div>
           <div id="preview">
             <ReactMarkdown>{markdownText}</ReactMarkdown>
           </div>
