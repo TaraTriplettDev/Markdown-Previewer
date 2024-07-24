@@ -38,13 +38,16 @@ _Italic Text_
 
 function App() {
   const [markdownText, setMarkdownText] = useState(defaultMarkdown);
-
+  const clearMarkdownText = () => {
+    setMarkdownText('');
+  }
     return (
     <>
       <div>
         <h1 style={{ textAlign: "center" }}>Markdown Previewer</h1>
         <div className="boxes-container">
           <textarea name="editor" id="editor" value={markdownText} onChange={(e) => setMarkdownText(e.target.value)}></textarea>
+          <button onClick={clearMarkdownText}>Clear Input Field</button>
           <div id="preview">
             <ReactMarkdown>{markdownText}</ReactMarkdown>
           </div>
