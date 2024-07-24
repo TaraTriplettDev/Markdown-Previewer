@@ -58,6 +58,14 @@ function App() {
             <ReactMarkdown>{markdownText}</ReactMarkdown>
           </div>
         </div>
+        <br></br>
+        <h1 style={{ textAlign: "center" }}>Example</h1>
+        <div className="boxes-container">
+          <textarea name="editor" id="editor" value={defaultMarkdown}></textarea>
+          <div id="preview">
+            <ReactMarkdown>{defaultMarkdown}</ReactMarkdown>
+          </div>
+        </div>
       </div>
     </>
   );
